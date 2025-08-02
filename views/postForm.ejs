@@ -13,7 +13,8 @@
   <%- include('navbar') %>
 
     <main class="pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
-      <h1 class="text-3xl font-bold mb-6 text-center">Generate Your <span class="gradient-text">LinkedIn</span> Post</h1>
+      <h1 class="text-3xl font-bold mb-6 text-center">Generate Your <span class="gradient-text">LinkedIn</span> Post
+      </h1>
 
       <form action="/generate-post" method="POST"
         class="max-w-3xl mx-auto p-6 rounded-lg border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300">
@@ -23,18 +24,19 @@
           placeholder="E.g. Just solved LeetCode 300: Longest Increasing Subsequence..."></textarea>
 
         <button type="submit"
-          class="mt-4 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton" onclick="generating()">
+          class="mt-4 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
+          onclick="generating()">
           Generate Post
         </button>
       </form>
     </main>
 
     <%- include('footer') %>
-    <script>
+      <script>
         function generating() {
           const genBtn = document.querySelector(".genButton");
-          genBtn.innerText="Generating...";
-          
+          genBtn.innerText = "Generating...";
+
         }
       </script>
       <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>

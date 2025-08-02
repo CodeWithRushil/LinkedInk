@@ -32,18 +32,19 @@
 
 
         <button type="submit"
-          class="mt-4 w-full cursor-pointer bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton" onclick="generating()">
+          class="mt-4 w-full cursor-pointer bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
+          onclick="generating()">
           Generate Hashtags
         </button>
       </form>
     </main>
 
     <%- include('footer') %>
-    <script>
+      <script>
         function generating() {
           const genBtn = document.querySelector(".genButton");
-          genBtn.innerText="Generating...";
-          
+          genBtn.innerText = "Generating...";
+
         }
       </script>
       <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
