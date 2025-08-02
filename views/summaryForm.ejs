@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedInk | Generate Summary</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-[#07050c] text-[#e3dfec] font-inter">
+  <%- include('navbar') %>
+
+    <main class="pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
+      <h1 class="text-3xl font-bold mb-6 text-center">Generate Your <span class="gradient-text">LinkedIn</span> Summary</h1>
+
+      <form action="/generate-summary" method="POST"
+        class="max-w-3xl mx-auto p-6 rounded-lg border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300 ">
+        <label for="summaryInput" class="block mb-2 text-sm font-medium">
+          Enter your resume/experience details
+        </label>
+        <textarea id="summaryInput" name="summaryInput" rows="9"
+          class="block w-full p-3 text-lg text-[#e3dfec] rounded-lg border placeholder-gray-400 focus:ring-[#e3dfec] border-[#e3dfec] transition duration-300"
+          placeholder="E.g. 2 years experience in backend development, Node.js, Express, MongoDB..."></textarea>
+
+        <button type="submit"
+          class="mt-4 cursor-pointer w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 genButton" onclick="generating()">
+          Generate Summary
+        </button>
+      </form>
+    </main>
+
+    <%- include('footer') %>
+    <script>
+        function generating() {
+          const genBtn = document.querySelector(".genButton");
+          genBtn.innerText="Generating...";
+          
+        }
+      </script>
+      <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LinkedIn Content Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <nav>
+    <div class="logo">LinkedIn Generator</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/generate-post">Generate Post</a></li>
+      <li><a href="/generate-summary">Generate Summary</a></li>
+      <li><a href="/generate-hashtags">Generate Hashtags</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Boost Your LinkedIn Presence 🚀</h1>
+    <p>Quickly generate professional posts, profile summaries, and relevant hashtags using AI!</p>
+    <div class="cta">
+      <a href="/generate-post">Start with a Post</a>
+      <a href="/generate-summary">Write a Summary</a>
+      <a href="/generate-hashtags">Create Hashtags</a>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for LinkedIn creators.
+  </footer>
+</body>
+</html> -->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedInk | Hashtag Results</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-[#07050c] text-[#e3dfec] font-inter">
+  <%- include('navbar') %>
+
+    <main class="pt-24 px-6 md:px-12 lg:px-24 mt-15 mb-22">
+      <div class="max-w-3xl mx-auto p-6 rounded-lg shadow text-center">
+        <h1 class="text-4xl font-bold mb-8">Your <span class="gradient-text">Hashtags</span> are Ready!</h1>
+        <p id="hashtagText"
+          class="text-lg font-medium border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300 p-6 rounded-lg mb-8"
+          contenteditable="true">
+          <%= hashtags %>
+        </p>
+
+        <div class="flex md:flex-row flex-col justify-center items-center md:gap-4 gap-5 mt-4">
+          <button onclick="copyHashtagsToClipboard()"
+            class="px-6 py-2 bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] cursor-pointer font-semibold rounded-lg transition duration-300 copyButton">
+            Copy to Clipboard
+          </button>
+          <button onclick="pleaseWait(); location.reload();"
+            class="px-6 py-2 bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] cursor-pointer font-semibold rounded-lg transition duration-300 waitButton">
+            Regenerate
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <%- include('footer') %>
+
+      <script>
+        function copyHashtagsToClipboard() {
+          const text = document.getElementById('hashtagText').innerText;
+          const copyBtn = document.querySelector(".copyButton");
+          navigator.clipboard.writeText(text).then(() => {
+            copyBtn.innerText = "Copied!"
+          }).catch(err => {
+            copyBtn.innerText = "Failed to copy!"
+          });
+          setTimeout(() => {
+            copyBtn.innerText = "Copy to Clipboard";
+          }, 5000);
+        }
+        function pleaseWait() {
+          const waitBtn = document.querySelector(".waitButton");
+          waitBtn.innerText = "Please wait...";
+        }
+      </script>
+      <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+</body>
+
+</html>

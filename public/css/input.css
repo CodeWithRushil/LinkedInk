@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --text: #e3dfec;
+  --primary: #a188de;
+  --secondary: #351684;
+  --accent: #6c37f1;
+  --textcontrast: #64d97b;
+  --bgcontrast: #64d97b;
+  --primary5: #a087de0d;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.outline-text {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--text);
+  color: transparent;
+}
+.italic-text{
+  font-style: italic;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1623;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6e50b9, #4a22a8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2d1363, #1c0b45); 
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6e50b9 #1a1623;
+}

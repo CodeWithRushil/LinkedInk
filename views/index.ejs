@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedInk</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-[#07050c] text-[#e3dfec] font-inter">
+  <%- include('navbar') %>
+    <main class="sm:mt-26 md:mt-20 px-6 mb-30 mt-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="pt-24 px-6 md:px-12 lg:px-24">
+          <h1 class="text-4xl font-bold text-center mb-6">
+            Welcome to <span class="italic-text">LinkedInk</span>
+          </h1>
+          <h1 class="mb-4 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#e3dfec]">
+            Boost Your <span class="gradient-text">LinkedIn</span><br />
+            <span class="outline-text italic-text">Presence</span>
+          </h1>
+          <p class="mb-8 text-lg md:text-xl text-[#e3dfec]">
+            Quickly generate professional posts, profile summaries, and relevant hashtags using AI!
+          </p>
+          <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="/generate-post"
+              class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-medium transition duration-200">
+              Start with a Post
+            </a>
+            <a href="/generate-summary"
+              class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-medium transition duration-200">
+              Write a Summary
+            </a>
+            <a href="/generate-hashtags"
+              class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-medium transition duration-200">
+              Create Hashtags
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <%- include('footer') %>
+      <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+</body>
+
+</html>
