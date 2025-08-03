@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 const axios = require('axios');
+const serverless = require("serverless-http");
+const path = require("path");
 
 require('dotenv').config();
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
@@ -132,3 +135,6 @@ app.post("/generate-summary", async (req, res) => {
 app.use((req, res) => {
     res.status(404).render('404');
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);
