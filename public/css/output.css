@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
@@ -435,17 +434,17 @@
   .border-\[\#e3dfec\] {
     border-color: #e3dfec;
   }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
+  .border-black {
+    border-color: var(--color-black);
   }
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
+  .border-gray-600 {
+    border-color: var(--color-gray-600);
+  }
   .bg-\[\#07050c\] {
     background-color: #07050c;
-  }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
   }
   .bg-gradient-to-r {
     --tw-gradient-position: to right in oklab;
@@ -633,10 +632,17 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
-  .hover\:bg-gray-100 {
+  .hover\:bg-\[\#07050c\] {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-gray-100);
+        background-color: #07050c;
+      }
+    }
+  }
+  .hover\:bg-black {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-black);
       }
     }
   }
@@ -663,6 +669,13 @@
       }
     }
   }
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
   .hover\:underline {
     &:hover {
       @media (hover: hover) {
@@ -681,9 +694,9 @@
       --tw-ring-color: #e3dfec;
     }
   }
-  .focus\:ring-gray-200 {
+  .focus\:ring-gray-600 {
     &:focus {
-      --tw-ring-color: var(--color-gray-200);
+      --tw-ring-color: var(--color-gray-600);
     }
   }
   .focus\:outline-none {
@@ -883,6 +896,15 @@
       }
     }
   }
+  .md\:hover\:text-\[\#6c37f1\] {
+    @media (width >= 48rem) {
+      &:hover {
+        @media (hover: hover) {
+          color: #6c37f1;
+        }
+      }
+    }
+  }
   .lg\:my-8 {
     @media (width >= 64rem) {
       margin-block: calc(var(--spacing) * 8);
@@ -917,24 +939,9 @@
       }
     }
   }
-  .dark\:border-black {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-black);
-    }
-  }
-  .dark\:border-gray-600 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-gray-600);
-    }
-  }
   .dark\:border-gray-700 {
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-gray-700);
-    }
-  }
-  .dark\:bg-\[\#07050c\] {
-    @media (prefers-color-scheme: dark) {
-      background-color: #07050c;
     }
   }
   .dark\:text-gray-200 {
@@ -952,65 +959,11 @@
       color: var(--color-white);
     }
   }
-  .dark\:hover\:bg-\[\#07050c\] {
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: #07050c;
-        }
-      }
-    }
-  }
-  .dark\:hover\:bg-black {
-    @media (prefers-color-scheme: dark) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: var(--color-black);
-        }
-      }
-    }
-  }
   .dark\:hover\:text-white {
     @media (prefers-color-scheme: dark) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-white);
-        }
-      }
-    }
-  }
-  .dark\:focus\:ring-gray-600 {
-    @media (prefers-color-scheme: dark) {
-      &:focus {
-        --tw-ring-color: var(--color-gray-600);
-      }
-    }
-  }
-  .md\:dark\:bg-\[\#07050c\] {
-    @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
-        background-color: #07050c;
-      }
-    }
-  }
-  .md\:dark\:hover\:bg-transparent {
-    @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
-        &:hover {
-          @media (hover: hover) {
-            background-color: transparent;
-          }
-        }
-      }
-    }
-  }
-  .md\:dark\:hover\:text-\[\#6c37f1\] {
-    @media (width >= 48rem) {
-      @media (prefers-color-scheme: dark) {
-        &:hover {
-          @media (hover: hover) {
-            color: #6c37f1;
-          }
         }
       }
     }
