@@ -80,7 +80,7 @@ app.post("/generate-hashtags", async (req, res) => {
             model: 'mistralai/mistral-7b-instruct',
             messages: [
                 { role: 'system', content: 'You are a professional LinkedIn content strategist.' },
-                { role: 'user', content: `Give me a list of 20 trending and relevant LinkedIn hashtags for: ${topic}. Return the hashtags seperated by spaces in a single string without any commas.` }
+                { role: 'user', content: `Give me a list of 21 trending and relevant LinkedIn hashtags for: ${topic}. Return the hashtags seperated by spaces in a single string without any commas.` }
             ],
             max_tokens: 300,
             temperature: 0.7
