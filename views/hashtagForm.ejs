@@ -15,15 +15,16 @@
   <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
 </head>
 
-<body class="bg-[#07050c] text-[#e3dfec] font-inter">
+<body class="bg-[#07050c] text-[#e3dfec] font-inter flex flex-col min-h-screen">
   <%- include('navbar') %>
 
-    <main class="pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
-      <h1 class="text-3xl font-bold mb-6 text-center">Generate <span class="gradient-text">LinkedIn</span> Hashtags</h1>
+    <main class="flex-grow pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
+      <h1 class="text-3xl font-bold mb-6 text-center">
+        Generate <span class="gradient-text">LinkedIn</span> Hashtags
+      </h1>
 
       <form action="/generate-hashtags" method="POST"
         class="max-w-3xl mx-auto p-6 rounded-lg border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300">
-
         <label for="topic" class="block mb-2 text-sm font-medium">
           Enter the topic or keywords of your LinkedIn post
         </label>
@@ -31,9 +32,8 @@
           class="block w-full p-3 text-lg text-[#e3dfec] rounded-lg border placeholder-gray-400 focus:ring-[#e3dfec] border-[#e3dfec] transition duration-300"
           placeholder="E.g. Web development, leadership, ReactJS, career advice..."></textarea>
 
-
         <button type="submit"
-          class="mt-4 w-full cursor-pointer bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
+          class="mt-4 w-full cursor-pointer bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 genButton"
           onclick="generating()">
           Generate Hashtags
         </button>
@@ -41,11 +41,11 @@
     </main>
 
     <%- include('footer') %>
+
       <script>
         function generating() {
           const genBtn = document.querySelector(".genButton");
           genBtn.innerText = "Generating...";
-
         }
       </script>
       <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>

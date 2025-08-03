@@ -12,13 +12,13 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet" />
-  <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">  
+  <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
 </head>
 
-<body class="bg-[#07050c] text-[#e3dfec] font-inter">
+<body class="bg-[#07050c] text-[#e3dfec] font-inter flex flex-col min-h-screen">
   <%- include('navbar') %>
 
-    <main class="pt-32 px-6 md:px-12 lg:px-24 text-center sm:mb-8 mb-15">
+    <main class="flex-grow pt-32 px-6 md:px-12 lg:px-24 text-center sm:mb-8 mb-15">
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-[#e3dfec] mb-8">
         Oops! <span class="gradient-text">Something went wrong with the</span><br />
         <span class="outline-text italic-text">API.</span>
@@ -33,6 +33,7 @@
     </main>
 
     <%- include('footer') %>
+
       <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
 </body>
 
