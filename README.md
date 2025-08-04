@@ -55,5 +55,5 @@ This project is licensed under the MIT License.
 
 ---
 
-💡 Whether you're a student, a developer, or a professional — LinkedInk helps you create better LinkedIn content, faster.
+💡 Whether you're a student, a developer, or a working professional — LinkedInk helps you create better LinkedIn content, faster.
 
