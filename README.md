@@ -1,4 +1,4 @@
-# ✨ LinkedInk — AI-Powered LinkedIn Post & Hashtag Generator
+# LinkedInk — AI-Powered LinkedIn Post & Hashtag Generator
 
 [![Vercel Deploy](https://img.shields.io/badge/Live-Demo-00C7B7?color=purple&logo=vercellogoColor=white)](https://linkedink.vercel.app/)
 [![License](https://img.shields.io/badge/License-MIT-crimson.svg)](#)
