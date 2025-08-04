@@ -1,7 +1,7 @@
-# 🖋️ LinkedInk — AI-Powered LinkedIn Post & Hashtag Generator
+# ✨ LinkedInk — AI-Powered LinkedIn Post & Hashtag Generator
 
-[![Vercel Deploy](https://img.shields.io/badge/Live-Demo-00C7B7?style=flat-square&logo=vercel&logoColor=white)](https://linkedink.vercel.app/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#)
+[![Vercel Deploy](https://img.shields.io/badge/Live-Demo-00C7B7?color=purple&logo=vercellogoColor=white)](https://linkedink.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-crimson.svg)](#)
 
 LinkedInk is a full-stack web app that helps professionals, creators, and students **generate high-quality LinkedIn posts and tailored hashtags instantly** using AI.
 
@@ -43,5 +43,17 @@ No more staring at a blank post box. Just enter your input — get an optimized 
 
 ---
 
-## 📂 Folder Structure
+## 📄 License
+This project is licensed under the MIT License.
+
+---
+
+🙌 Acknowledgements
+- [OpenRouter API](https://openrouter.ai/mistralai/mistral-7b-instruct)  
+- [TailwindCSS](https://tailwindcss.com)  
+- [Flowbite](https://flowbite.com)
+
+---
+
+💡 Whether you're a student, a developer, or a professional — LinkedInk helps you create better LinkedIn content, faster.
 
