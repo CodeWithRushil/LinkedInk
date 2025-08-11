@@ -3,7 +3,7 @@
 [![Vercel Deploy](https://img.shields.io/badge/Live-Demo-00C7B7?color=purple&logo=vercellogoColor=white)](https://linkedink.vercel.app/)
 [![License](https://img.shields.io/badge/License-MIT-crimson.svg)](#)
 
-LinkedInk is a full-stack web app that helps professionals, creators, and students **generate high-quality LinkedIn posts and tailored hashtags instantly** using AI.
+LinkedInk is a full-stack web app that helps professionals, creators, and students **generate high-quality LinkedIn posts and tailored hashtags instantly** using OpenRouter API.
 
 No more staring at a blank post box. Just enter your input — get an optimized LinkedIn post in seconds!
 
