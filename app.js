@@ -15,6 +15,7 @@ app.listen(3000, () => {
     console.log("Server is running on port 3000");
 })
 
+//Routes
 app.get("/", (req, res) => {
     res.render("index");
 })
@@ -136,5 +137,6 @@ app.use((req, res) => {
     res.status(404).render('404');
 });
 
+//Phase one is completed for now!!
 module.exports = app;
 module.exports.handler = serverless(app);
