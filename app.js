@@ -105,7 +105,7 @@ app.post("/generate-hashtags", async (req, res) => {
 });
 
 
-//Removed as of now!
+//Removed as of now! Cannot fix because of limitations of free APIs
 // app.post("/generate-summary", async (req, res) => {
 //     const { description } = req.body;
 //     try {
