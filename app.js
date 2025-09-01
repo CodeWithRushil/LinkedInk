@@ -28,10 +28,9 @@ app.get("/generate-hashtags", (req, res) => {
     res.render("hashtagForm");
 })
 
-//Removed as of now
-// app.get("/generate-summary", (req, res) => {
-//     res.render("summaryForm");
-// })
+app.get("/generate-summary", (req, res) => {
+    res.render("summaryForm");
+})
 app.get("/about-us", (req, res) => {
     res.render("about");
 })
@@ -104,36 +103,34 @@ app.post("/generate-hashtags", async (req, res) => {
     }
 });
 
+app.post("/generate-summary", async (req, res) => {
+    const { description } = req.body;
+    try {
+        const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
+            model: 'mistralai/mistral-7b-instruct',
+            messages: [
+                { role: 'system', content: 'You are a professional LinkedIn profile summary writer.' },
+                { role: 'user', content: `Based on this information: ${description}, write a LinkedIn summary in approximately 200 words. Return the response as an object like: {"summary": "Your summary here..."} in a professional tone.` }
+            ],
+            max_tokens: 300,
+            temperature: 0.7
+        }, {
+            headers: {
+                'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+                'Content-Type': 'application/json',
+                'HTTP-Referer': 'http://localhost:3000',
+                'X-Title': 'LinkedInk'
+            }
+        });
 
-//Removed as of now! Cannot fix because of limitations of free APIs
-// app.post("/generate-summary", async (req, res) => {
-//     const { description } = req.body;
-//     try {
-//         const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
-//             model: 'mistralai/mistral-7b-instruct',
-//             messages: [
-//                 { role: 'system', content: 'You are a professional LinkedIn profile summary writer.' },
-//                 { role: 'user', content: `Based on this information: ${description}, write a LinkedIn summary in approximately 200 words. Return the response as an object like: {"summary": "Your summary here..."} in a professional tone.` }
-//             ],
-//             max_tokens: 300,
-//             temperature: 0.7
-//         }, {
-//             headers: {
-//                 'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-//                 'Content-Type': 'application/json',
-//                 'HTTP-Referer': 'http://localhost:3000',
-//                 'X-Title': 'LinkedInk'
-//             }
-//         });
+        const summaryData = JSON.parse(response.data.choices[0].message.content);
+        res.render("summaryResult", { summary: summaryData.summary.trim() });
 
-//         const summaryData = JSON.parse(response.data.choices[0].message.content);
-//         res.render("summaryResult", { summary: summaryData.summary.trim() });
-
-//     } catch (error) {
-//         console.error(error);
-//         res.render("error");
-//     }
-// });
+    } catch (error) {
+        console.error(error);
+        res.render("error");
+    }
+});
 
 //Error-404!
 app.use((req, res) => {
