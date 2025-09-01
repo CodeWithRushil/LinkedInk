@@ -137,6 +137,6 @@ app.use((req, res) => {
     res.status(404).render('404');
 });
 
-//Phase one is completed for now!!
+//Phase two is completed for now!!
 module.exports = app;
-module.exports.handler = serverless(app);
+module.exports.handler = serverless(app
