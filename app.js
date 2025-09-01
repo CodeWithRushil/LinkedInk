@@ -139,4 +139,4 @@ app.use((req, res) => {
 
 //Phase two is completed for now!!
 module.exports = app;
-module.exports.handler = serverless(app
+module.exports.handler = serverless(app);
