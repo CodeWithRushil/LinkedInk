@@ -83,7 +83,7 @@ app.post("/generate-hashtags", async (req, res) => {
                 { role: 'system', content: 'You are a professional LinkedIn content strategist.' },
                 { role: 'user', content: `Give me a list of 21 trending and relevant LinkedIn hashtags for: ${topic}. Return the hashtags seperated by spaces in a single string without any commas.` }
             ],
-            max_tokens: 300,
+            max_tokens: 310,
             temperature: 0.7
         }, {
             headers: {
