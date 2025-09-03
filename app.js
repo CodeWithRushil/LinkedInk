@@ -110,9 +110,9 @@ app.post("/generate-summary", async (req, res) => {
             model: 'mistralai/mistral-7b-instruct',
             messages: [
                 { role: 'system', content: 'You are a professional LinkedIn profile summary writer.' },
-                { role: 'user', content: `Based on this information: ${description}, write a LinkedIn summary in approximately 200 words. Return the response as an object like: {"summary": "Your summary here..."} in a professional tone.` }
+                { role: 'user', content: `Based on this information: ${description}, write a LinkedIn summary in approximately 210 words. Return the response as an object like: {"summary": "Your summary here..."} in a professional tone.` }
             ],
-            max_tokens: 300,
+            max_tokens: 310,
             temperature: 0.7
         }, {
             headers: {
