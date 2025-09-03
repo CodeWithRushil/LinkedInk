@@ -51,9 +51,9 @@ app.post("/generate-post", async (req, res) => {
             model: 'mistralai/mistral-7b-instruct',
             messages: [
                 { role: 'system', content: 'You are a professional LinkedIn post writer.' },
-                { role: 'user', content: `Write a professional LinkedIn post about: ${topic}. Add an emoji before starting the title text. Keep it formatted as a professional post with required spaces and newlines, also add newline before hashtags and don't add emojis in hashtags. Limit hashtags to 10 only. All this in approximately 100 words.` }
+                { role: 'user', content: `Write a professional LinkedIn post about: ${topic}. Add an emoji before starting the title text. Keep it formatted as a professional post with required spaces and newlines, also add newline before hashtags and don't add emojis in hashtags. Limit hashtags to 10 only. All this in approximately 110 words.` }
             ],
-            max_tokens: 200,
+            max_tokens: 210,
             temperature: 0.7
         }, {
             headers: {
