@@ -132,7 +132,7 @@ app.post("/generate-summary", async (req, res) => {
     }
 });
 
-//Error-404!
+//Error-404 Handling!
 app.use((req, res) => {
     res.status(404).render('404');
 });
