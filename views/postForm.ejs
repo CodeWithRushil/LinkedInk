@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
 </head>
 
-<body class="bg-[#07050c] text-[#e3dfec] font-inter min-h-screen flex flex-col">
+<body class="dark:bg-[#07050c] bg-[#07050c] text-[#e3dfec] font-inter min-h-screen flex flex-col">
   <%- include('navbar') %>
 
     <main class="flex-1 pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
@@ -25,7 +25,7 @@
           placeholder="E.g. Just solved LeetCode 300: Longest Increasing Subsequence..."></textarea>
 
         <button type="submit"
-          class="mt-4 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
+          class="dark:mt-4 mt-4 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
           onclick="generating()">
           Generate Post
         </button>

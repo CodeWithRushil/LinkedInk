@@ -15,7 +15,7 @@
   <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
 </head>
 
-<body class="bg-[#07050c] text-[#e3dfec] font-inter min-h-screen flex flex-col">
+<body class="bg-[#07050c] dark:bg-[#07050c] text-[#e3dfec] font-inter min-h-screen flex flex-col">
 
   <%- include('navbar') %>
 
@@ -26,11 +26,11 @@
             <h1 class="text-4xl font-bold text-center mb-6">
               Welcome to <span class="italic-text">LinkedInk</span>
             </h1>
-            <h1 class="mb-4 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#e3dfec]">
+            <h1 class="mb-4 dark:text-5xl text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#e3dfec]">
               Boost Your <span class="gradient-text">LinkedIn</span><br />
               <span class="outline-text italic-text">Presence</span>
             </h1>
-            <p class="mb-8 text-lg md:text-xl text-[#e3dfec]">
+            <p class="mb-8 text-lg dark:text-lg md:text-xl text-[#e3dfec]">
               Quickly generate professional posts, profile summaries, and relevant hashtags using AI!
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
@@ -43,7 +43,7 @@
                 Write a Summary
               </a>
               <a href="/generate-hashtags"
-                class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-medium transition duration-200">
+                class="px-6 py-3 dark:py-3 rounded-lg bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-medium transition duration-200">
                 Create Hashtags
               </a>
             </div>
