@@ -1,6 +1,6 @@
 # LinkedInk — AI-Powered LinkedIn Post & Hashtag Generator
 
-[![Vercel Deploy](https://img.shields.io/badge/Live-Demo-00C7B7?color=purple&logo=vercellogoColor=white)](https://linkedink.vercel.app/)
+[![Vercel Deploy](https://img.shields.io/badge/Live-Demo-155DFC?color=blue&logo=vercel&logoColor=white)](https://linkedink.vercel.app/)
 [![License](https://img.shields.io/badge/License-MIT-crimson.svg)](#)
 
 LinkedInk is a full-stack web app that helps professionals, creators, and students **generate high-quality LinkedIn posts and tailored hashtags instantly** using AI.
