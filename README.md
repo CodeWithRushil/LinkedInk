@@ -21,7 +21,7 @@ No more staring at a blank post box. Just enter your input — get an optimized 
 
 ## 🖼️ Live Demo
 
-🔗 [https://linkedink.vercel.app/](https://linkedink.vercel.app/)
+🔗 [https://linkedink.vercel.app](https://linkedink.vercel.app)
 
 ---
 
@@ -48,7 +48,7 @@ This project is licensed under the MIT License.
 
 ---
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 - [OpenRouter API](https://openrouter.ai/mistralai/mistral-7b-instruct)  
 - [TailwindCSS](https://tailwindcss.com)  
 - [Flowbite](https://flowbite.com)
