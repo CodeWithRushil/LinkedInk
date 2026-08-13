@@ -241,9 +241,6 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
-  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
@@ -252,15 +249,6 @@
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
-  }
-  .mt-11 {
-    margin-top: calc(var(--spacing) * 11);
-  }
-  .mt-13 {
-    margin-top: calc(var(--spacing) * 13);
-  }
-  .mt-16 {
-    margin-top: calc(var(--spacing) * 16);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -288,18 +276,6 @@
   }
   .mb-15 {
     margin-bottom: calc(var(--spacing) * 15);
-  }
-  .mb-16 {
-    margin-bottom: calc(var(--spacing) * 16);
-  }
-  .mb-18 {
-    margin-bottom: calc(var(--spacing) * 18);
-  }
-  .mb-22 {
-    margin-bottom: calc(var(--spacing) * 22);
-  }
-  .mb-24 {
-    margin-bottom: calc(var(--spacing) * 24);
   }
   .mb-30 {
     margin-bottom: calc(var(--spacing) * 30);
@@ -354,12 +330,6 @@
   }
   .max-w-screen-xl {
     max-width: var(--breakpoint-xl);
-  }
-  .flex-1 {
-    flex: 1;
-  }
-  .flex-grow {
-    flex-grow: 1;
   }
   .grow {
     flex-grow: 1;
@@ -517,11 +487,11 @@
   .pt-24 {
     padding-top: calc(var(--spacing) * 24);
   }
-  .pt-32 {
-    padding-top: calc(var(--spacing) * 32);
-  }
   .pt-\[0\] {
     padding-top: 0;
+  }
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
   }
   .text-center {
     text-align: center;
@@ -730,16 +700,6 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
-  .sm\:mt-26 {
-    @media (width >= 40rem) {
-      margin-top: calc(var(--spacing) * 26);
-    }
-  }
-  .sm\:mb-8 {
-    @media (width >= 40rem) {
-      margin-bottom: calc(var(--spacing) * 8);
-    }
-  }
   .sm\:flex {
     @media (width >= 40rem) {
       display: flex;
@@ -788,16 +748,6 @@
   .md\:mt-0 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 0);
-    }
-  }
-  .md\:mt-18 {
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 18);
-    }
-  }
-  .md\:mt-20 {
-    @media (width >= 48rem) {
-      margin-top: calc(var(--spacing) * 20);
     }
   }
   .md\:mb-0 {

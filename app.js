@@ -44,16 +44,38 @@ app.get("/terms", (req, res) => {
 })
 
 app.post("/generate-post", async (req, res) => {
-    const { topic } = req.body;
+    const { topic, tone, length } = req.body;
     try {
+        let lengthInstruction = "Keep the total post between 150-200 words.";
+        if (length === "Short") lengthInstruction = "Keep the post very concise, under 100 words.";
+        if (length === "Long") lengthInstruction = "Write a longer, story-driven post, around 250-350 words.";
+
         const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
-            model: 'mistralai/mistral-7b-instruct',
+            model: 'google/gemini-2.5-flash',
             messages: [
-                { role: 'system', content: 'You are a professional LinkedIn post writer.' },
-                { role: 'user', content: `Write a professional LinkedIn post about: ${topic}. Add an emoji before starting the title text. Keep it formatted as a professional post with required spaces and newlines, also add newline before hashtags and don't add emojis in hashtags. Limit hashtags to 10 only. All this in approximately 100 words.` }
+                {
+                    role: 'system',
+                    content: `You are an elite LinkedIn ghostwriter who has studied thousands of viral LinkedIn posts. You understand the LinkedIn algorithm deeply: short punchy lines get more "see more" clicks, white space improves readability, and a strong hook in the first line is critical for engagement.
+
+Your writing rules:
+- Start with a bold, attention-grabbing hook line (use an emoji at the very start). This first line must create curiosity or make a surprising statement.
+- Use short paragraphs (1-2 sentences max per paragraph).
+- Add line breaks between every paragraph for readability.
+- Include a personal story, insight, or lesson — not generic advice.
+- End with a clear call-to-action or thought-provoking question to drive comments.
+- Add exactly 5-8 highly relevant hashtags on a new line at the very end (no emojis in hashtags).
+- ${lengthInstruction}
+- Write in first person. Sound authentic and human — never robotic or corporate.
+- Do NOT use markdown formatting like bold (**), italics (*), or headers (#). Use plain text only.
+- Do NOT include any meta-commentary like "Here's your post" or "Sure!". Output ONLY the post itself.`
+                },
+                {
+                    role: 'user',
+                    content: `Write a high-engagement LinkedIn post about: ${topic}. Tone: ${tone || 'Professional'}.`
+                }
             ],
-            max_tokens: 200,
-            temperature: 0.7
+            max_tokens: 600,
+            temperature: 0.8
         }, {
             headers: {
                 'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
@@ -62,7 +84,6 @@ app.post("/generate-post", async (req, res) => {
                 'X-Title': 'LinkedInk'
             }
         });
-
 
         const postContent = response.data.choices[0].message.content;
         res.render("postResult", { postContent: postContent.trim() });
@@ -74,13 +95,26 @@ app.post("/generate-post", async (req, res) => {
 })
 
 app.post("/generate-hashtags", async (req, res) => {
-    const { topic } = req.body;
+    const { topic, industry, audience } = req.body;
     try {
         const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
-            model: 'mistralai/mistral-7b-instruct',
+            model: 'google/gemini-2.5-flash',
             messages: [
-                { role: 'system', content: 'You are a professional LinkedIn content strategist.' },
-                { role: 'user', content: `Give me a list of 21 trending and relevant LinkedIn hashtags for: ${topic}. Return the hashtags seperated by spaces in a single string without any commas.` }
+                {
+                    role: 'system',
+                    content: `You are a LinkedIn growth strategist who specializes in hashtag research and content discoverability. You understand how the LinkedIn algorithm surfaces content through hashtags and how different hashtag sizes (broad vs niche) affect reach.
+
+Your rules:
+- Generate exactly 21 hashtags.
+- Mix 3 tiers: 7 broad/high-volume hashtags, 7 medium/industry-specific hashtags, and 7 niche/targeted hashtags specific to the exact topic and audience.
+- Every hashtag must start with # and use PascalCase (e.g. #MachineLearning not #machinelearning).
+- Return ONLY the hashtags separated by spaces on a single line — no numbering, no bullets, no explanations, no categories, no extra text.
+- Do NOT include any meta-commentary like "Here are your hashtags" or "Sure!". Output ONLY the hashtags.`
+                },
+                {
+                    role: 'user',
+                    content: `Generate 21 optimized LinkedIn hashtags for: ${topic}. Industry: ${industry || 'General'}. Target Audience: ${audience || 'General Audience'}.`
+                }
             ],
             max_tokens: 300,
             temperature: 0.7
@@ -103,16 +137,35 @@ app.post("/generate-hashtags", async (req, res) => {
 });
 
 app.post("/generate-summary", async (req, res) => {
-    const { description } = req.body;
+    const { description, experience, goal } = req.body;
     try {
         const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
-            model: 'mistralai/mistral-7b-instruct',
+            model: 'google/gemini-2.5-flash',
             messages: [
-                { role: 'system', content: 'You are a professional LinkedIn profile summary writer.' },
-                { role: 'user', content: `Based on this information: ${description}, write a LinkedIn summary in approximately 200 words. Return the response as an object like: {"summary": "Your summary here..."} in a professional tone.` }
+                {
+                    role: 'system',
+                    content: `You are a professional LinkedIn profile optimization expert who has written hundreds of high-converting LinkedIn "About" sections for professionals across all industries.
+
+Your writing rules:
+- Write in first person, in a warm yet professional tone.
+- Open with a compelling one-line personal brand statement that captures who the person is and the value they bring.
+- Highlight key skills, achievements, and passions naturally woven into a narrative — not a boring list.
+- Include quantifiable achievements or impact where the input allows.
+- Tailor the narrative to their experience level (e.g., highlight growth for entry-level, leadership/strategy for executives).
+- End with a call to action or closing statement that aligns with their primary goal on LinkedIn.
+- Keep it between 180-250 words.
+- Use short paragraphs for readability (2-3 sentences each).
+- Sound genuinely human and personable — not like a resume or a chatbot.
+- Do NOT use markdown formatting like bold (**), italics (*), or headers (#). Use plain text only.
+- Do NOT include any meta-commentary like "Here's your summary" or "Sure!". Output ONLY the summary itself.`
+                },
+                {
+                    role: 'user',
+                    content: `Write a professional LinkedIn "About" section based on this information: ${description}. Experience Level: ${experience || 'Mid-level Professional'}. Primary Goal: ${goal || 'Building Personal Brand'}.`
+                }
             ],
-            max_tokens: 300,
-            temperature: 0.7
+            max_tokens: 500,
+            temperature: 0.75
         }, {
             headers: {
                 'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
@@ -122,8 +175,8 @@ app.post("/generate-summary", async (req, res) => {
             }
         });
 
-        const summaryData = JSON.parse(response.data.choices[0].message.content);
-        res.render("summaryResult", { summary: summaryData.summary.trim() });
+        const summaryContent = response.data.choices[0].message.content;
+        res.render("summaryResult", { summary: summaryContent.trim() });
 
     } catch (error) {
         console.error(error);

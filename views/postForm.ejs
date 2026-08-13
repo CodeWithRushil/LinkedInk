@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,19 +13,42 @@
 <body class="bg-[#07050c] text-[#e3dfec] font-inter min-h-screen flex flex-col">
   <%- include('navbar') %>
 
-    <main class="flex-1 pt-24 px-6 md:px-12 lg:px-24 mt-13 mb-22">
+    <main class="min-h-screen pt-24 pb-12 flex flex-col items-center justify-center px-6 md:px-12 lg:px-24">
       <h1 class="text-3xl font-bold mb-6 text-center">Generate Your <span class="gradient-text">LinkedIn</span> Post
       </h1>
 
       <form action="/generate-post" method="POST"
-        class="max-w-3xl mx-auto p-6 rounded-lg border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300">
+        class="max-w-3xl w-full mx-auto p-6 rounded-lg border border-[#e3dfec] shadow-[0_0_40px_#4a22a8aa] transition-all duration-300">
         <label for="message" class="block mb-2 text-sm font-medium">What's your post about?</label>
-        <textarea id="message" name="topic" rows="9"
+        <textarea id="message" name="topic" rows="5"
           class="block w-full p-3 text-lg text-[#e3dfec] rounded-lg border placeholder-gray-400 focus:ring-[#e3dfec] border-[#e3dfec] transition duration-300"
           placeholder="E.g. Just solved LeetCode 300: Longest Increasing Subsequence..."></textarea>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div>
+            <label for="tone" class="block mb-2 text-sm font-medium">Tone</label>
+            <select id="tone" name="tone"
+              class="block w-full p-3 text-lg text-[#e3dfec] bg-[#07050c] rounded-lg border focus:ring-[#e3dfec] border-[#e3dfec] transition duration-300">
+              <option value="Professional">Professional</option>
+              <option value="Casual">Casual</option>
+              <option value="Inspirational">Inspirational</option>
+              <option value="Humorous">Humorous</option>
+              <option value="Educational">Educational</option>
+            </select>
+          </div>
+          <div>
+            <label for="length" class="block mb-2 text-sm font-medium">Length</label>
+            <select id="length" name="length"
+              class="block w-full p-3 text-lg text-[#e3dfec] bg-[#07050c] rounded-lg border focus:ring-[#e3dfec] border-[#e3dfec] transition duration-300">
+              <option value="Medium">Medium (150-200 words)</option>
+              <option value="Short">Short (&lt; 100 words)</option>
+              <option value="Long">Long (300+ words)</option>
+            </select>
+          </div>
+        </div>
+
         <button type="submit"
-          class="mt-4 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
+          class="mt-6 w-full bg-gradient-to-r from-[#6e50b9] to-[#4a22a8] hover:from-[#2d1363] hover:to-[#1c0b45] text-[#e3dfec] font-semibold py-2 px-4 rounded-lg transition duration-300 cursor-pointer genButton"
           onclick="generating()">
           Generate Post
         </button>
